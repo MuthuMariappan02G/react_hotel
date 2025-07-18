@@ -1,0 +1,1106 @@
+[
+  {
+    "id": 1,
+    "price": 208,
+    "type": "Deluxe King Size Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+1",
+    "features": [
+      {
+        "icon": "bi bi-caret-right",
+        "label": "24/7 Support"
+      },
+      {
+        "icon": "bi bi-droplet",
+        "label": "Hot Water"
+      }
+    ],
+    "rating": 4.8
+  },
+  {
+    "id": 2,
+    "price": 170,
+    "type": "Deluxe Double Bed Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+2",
+    "features": [
+      {
+        "icon": "bi bi-droplet",
+        "label": "Hot Water"
+      },
+      {
+        "icon": "bi bi-wifi",
+        "label": "WiFi"
+      },
+      {
+        "icon": "bi bi-shower",
+        "label": "Shower"
+      }
+    ],
+    "rating": 3.5
+  },
+  {
+    "id": 3,
+    "price": 199,
+    "type": "Deluxe Queen Size Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+3",
+    "features": [
+      {
+        "icon": "bi bi-droplet",
+        "label": "Hot Water"
+      },
+      {
+        "icon": "bi bi-door-closed",
+        "label": "Private Entrance"
+      }
+    ],
+    "rating": 3.8
+  },
+  {
+    "id": 4,
+    "price": 217,
+    "type": "Deluxe King Size Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+4",
+    "features": [
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      },
+      {
+        "icon": "bi bi-caret-right",
+        "label": "24/7 Support"
+      }
+    ],
+    "rating": 3.8
+  },
+  {
+    "id": 5,
+    "price": 210,
+    "type": "Deluxe King Size Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+5",
+    "features": [
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      },
+      {
+        "icon": "bi bi-shower",
+        "label": "Shower"
+      },
+      {
+        "icon": "bi bi-building",
+        "label": "Balcony"
+      },
+      {
+        "icon": "bi bi-snow",
+        "label": "AC"
+      }
+    ],
+    "rating": 3.5
+  },
+  {
+    "id": 6,
+    "price": 169,
+    "type": "Deluxe Single Bed Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+6",
+    "features": [
+      {
+        "icon": "bi bi-building",
+        "label": "Balcony"
+      },
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      }
+    ],
+    "rating": 4.0
+  },
+  {
+    "id": 7,
+    "price": 336,
+    "type": "Suite Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+7",
+    "features": [
+      {
+        "icon": "bi bi-droplet",
+        "label": "Hot Water"
+      },
+      {
+        "icon": "bi bi-caret-right",
+        "label": "24/7 Support"
+      }
+    ],
+    "rating": 4.5
+  },
+  {
+    "id": 8,
+    "price": 180,
+    "type": "Deluxe Queen Size Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+8",
+    "features": [
+      {
+        "icon": "bi bi-door-closed",
+        "label": "Private Entrance"
+      },
+      {
+        "icon": "bi bi-wifi",
+        "label": "WiFi"
+      },
+      {
+        "icon": "bi bi-snow",
+        "label": "AC"
+      },
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      }
+    ],
+    "rating": 3.7
+  },
+  {
+    "id": 9,
+    "price": 310,
+    "type": "Junior Suite",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+9",
+    "features": [
+      {
+        "icon": "bi bi-caret-right",
+        "label": "24/7 Support"
+      },
+      {
+        "icon": "bi bi-building",
+        "label": "Balcony"
+      },
+      {
+        "icon": "bi bi-snow",
+        "label": "AC"
+      }
+    ],
+    "rating": 3.9
+  },
+  {
+    "id": 10,
+    "price": 217,
+    "type": "Twin Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+10",
+    "features": [
+      {
+        "icon": "bi bi-shower",
+        "label": "Shower"
+      },
+      {
+        "icon": "bi bi-wifi",
+        "label": "WiFi"
+      },
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      },
+      {
+        "icon": "bi bi-droplet",
+        "label": "Hot Water"
+      }
+    ],
+    "rating": 3.8
+  },
+  {
+    "id": 11,
+    "price": 183,
+    "type": "Deluxe Single Bed Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+11",
+    "features": [
+      {
+        "icon": "bi bi-droplet",
+        "label": "Hot Water"
+      },
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      },
+      {
+        "icon": "bi bi-tv",
+        "label": "TV"
+      }
+    ],
+    "rating": 4.7
+  },
+  {
+    "id": 12,
+    "price": 152,
+    "type": "Deluxe Single Bed Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+12",
+    "features": [
+      {
+        "icon": "bi bi-snow",
+        "label": "AC"
+      },
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      }
+    ],
+    "rating": 4.6
+  },
+  {
+    "id": 13,
+    "price": 219,
+    "type": "Deluxe King Size Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+13",
+    "features": [
+      {
+        "icon": "bi bi-snow",
+        "label": "AC"
+      },
+      {
+        "icon": "bi bi-caret-right",
+        "label": "24/7 Support"
+      },
+      {
+        "icon": "bi bi-wifi",
+        "label": "WiFi"
+      },
+      {
+        "icon": "bi bi-building",
+        "label": "Balcony"
+      }
+    ],
+    "rating": 3.2
+  },
+  {
+    "id": 14,
+    "price": 164,
+    "type": "Deluxe Single Bed Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+14",
+    "features": [
+      {
+        "icon": "bi bi-shower",
+        "label": "Shower"
+      },
+      {
+        "icon": "bi bi-snow",
+        "label": "AC"
+      },
+      {
+        "icon": "bi bi-droplet",
+        "label": "Hot Water"
+      }
+    ],
+    "rating": 3.1
+  },
+  {
+    "id": 15,
+    "price": 203,
+    "type": "Deluxe King Size Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+15",
+    "features": [
+      {
+        "icon": "bi bi-caret-right",
+        "label": "24/7 Support"
+      },
+      {
+        "icon": "bi bi-building",
+        "label": "Balcony"
+      },
+      {
+        "icon": "bi bi-wifi",
+        "label": "WiFi"
+      },
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      }
+    ],
+    "rating": 4.3
+  },
+  {
+    "id": 16,
+    "price": 206,
+    "type": "Deluxe Queen Size Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+16",
+    "features": [
+      {
+        "icon": "bi bi-tv",
+        "label": "TV"
+      },
+      {
+        "icon": "bi bi-shower",
+        "label": "Shower"
+      },
+      {
+        "icon": "bi bi-droplet",
+        "label": "Hot Water"
+      }
+    ],
+    "rating": 3.0
+  },
+  {
+    "id": 17,
+    "price": 208,
+    "type": "Deluxe King Size Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+17",
+    "features": [
+      {
+        "icon": "bi bi-caret-right",
+        "label": "24/7 Support"
+      },
+      {
+        "icon": "bi bi-shower",
+        "label": "Shower"
+      },
+      {
+        "icon": "bi bi-door-closed",
+        "label": "Private Entrance"
+      }
+    ],
+    "rating": 4.2
+  },
+  {
+    "id": 18,
+    "price": 223,
+    "type": "Deluxe King Size Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+18",
+    "features": [
+      {
+        "icon": "bi bi-door-closed",
+        "label": "Private Entrance"
+      },
+      {
+        "icon": "bi bi-shower",
+        "label": "Shower"
+      },
+      {
+        "icon": "bi bi-wifi",
+        "label": "WiFi"
+      },
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      }
+    ],
+    "rating": 3.1
+  },
+  {
+    "id": 19,
+    "price": 152,
+    "type": "Deluxe Single Bed Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+19",
+    "features": [
+      {
+        "icon": "bi bi-door-closed",
+        "label": "Private Entrance"
+      },
+      {
+        "icon": "bi bi-snow",
+        "label": "AC"
+      }
+    ],
+    "rating": 4.7
+  },
+  {
+    "id": 20,
+    "price": 225,
+    "type": "Deluxe Queen Size Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+20",
+    "features": [
+      {
+        "icon": "bi bi-snow",
+        "label": "AC"
+      },
+      {
+        "icon": "bi bi-wifi",
+        "label": "WiFi"
+      },
+      {
+        "icon": "bi bi-tv",
+        "label": "TV"
+      }
+    ],
+    "rating": 4.9
+  },
+  {
+    "id": 21,
+    "price": 539,
+    "type": "Presidential Suite",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+21",
+    "features": [
+      {
+        "icon": "bi bi-caret-right",
+        "label": "24/7 Support"
+      },
+      {
+        "icon": "bi bi-tv",
+        "label": "TV"
+      }
+    ],
+    "rating": 3.3
+  },
+  {
+    "id": 22,
+    "price": 185,
+    "type": "Deluxe Double Bed Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+22",
+    "features": [
+      {
+        "icon": "bi bi-wifi",
+        "label": "WiFi"
+      },
+      {
+        "icon": "bi bi-building",
+        "label": "Balcony"
+      },
+      {
+        "icon": "bi bi-shower",
+        "label": "Shower"
+      },
+      {
+        "icon": "bi bi-tv",
+        "label": "TV"
+      }
+    ],
+    "rating": 3.1
+  },
+  {
+    "id": 23,
+    "price": 148,
+    "type": "Standart Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+23",
+    "features": [
+      {
+        "icon": "bi bi-building",
+        "label": "Balcony"
+      },
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      },
+      {
+        "icon": "bi bi-tv",
+        "label": "TV"
+      },
+      {
+        "icon": "bi bi-shower",
+        "label": "Shower"
+      }
+    ],
+    "rating": 3.5
+  },
+  {
+    "id": 24,
+    "price": 139,
+    "type": "Standart Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+24",
+    "features": [
+      {
+        "icon": "bi bi-building",
+        "label": "Balcony"
+      },
+      {
+        "icon": "bi bi-caret-right",
+        "label": "24/7 Support"
+      },
+      {
+        "icon": "bi bi-tv",
+        "label": "TV"
+      }
+    ],
+    "rating": 4.6
+  },
+  {
+    "id": 25,
+    "price": 220,
+    "type": "Deluxe Double Bed Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+25",
+    "features": [
+      {
+        "icon": "bi bi-snow",
+        "label": "AC"
+      },
+      {
+        "icon": "bi bi-building",
+        "label": "Balcony"
+      },
+      {
+        "icon": "bi bi-wifi",
+        "label": "WiFi"
+      }
+    ],
+    "rating": 3.7
+  },
+  {
+    "id": 26,
+    "price": 190,
+    "type": "Deluxe Queen Size Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+26",
+    "features": [
+      {
+        "icon": "bi bi-snow",
+        "label": "AC"
+      },
+      {
+        "icon": "bi bi-tv",
+        "label": "TV"
+      }
+    ],
+    "rating": 3.5
+  },
+  {
+    "id": 27,
+    "price": 202,
+    "type": "Deluxe King Size Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+27",
+    "features": [
+      {
+        "icon": "bi bi-droplet",
+        "label": "Hot Water"
+      },
+      {
+        "icon": "bi bi-door-closed",
+        "label": "Private Entrance"
+      },
+      {
+        "icon": "bi bi-snow",
+        "label": "AC"
+      }
+    ],
+    "rating": 4.4
+  },
+  {
+    "id": 28,
+    "price": 222,
+    "type": "Deluxe King Size Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+28",
+    "features": [
+      {
+        "icon": "bi bi-wifi",
+        "label": "WiFi"
+      },
+      {
+        "icon": "bi bi-shower",
+        "label": "Shower"
+      }
+    ],
+    "rating": 4.3
+  },
+  {
+    "id": 29,
+    "price": 229,
+    "type": "Twin Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+29",
+    "features": [
+      {
+        "icon": "bi bi-door-closed",
+        "label": "Private Entrance"
+      },
+      {
+        "icon": "bi bi-wifi",
+        "label": "WiFi"
+      },
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      },
+      {
+        "icon": "bi bi-building",
+        "label": "Balcony"
+      }
+    ],
+    "rating": 4.1
+  },
+  {
+    "id": 30,
+    "price": 174,
+    "type": "Deluxe Double Bed Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+30",
+    "features": [
+      {
+        "icon": "bi bi-tv",
+        "label": "TV"
+      },
+      {
+        "icon": "bi bi-building",
+        "label": "Balcony"
+      },
+      {
+        "icon": "bi bi-shower",
+        "label": "Shower"
+      }
+    ],
+    "rating": 3.5
+  },
+  {
+    "id": 31,
+    "price": 341,
+    "type": "Suite Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+31",
+    "features": [
+      {
+        "icon": "bi bi-wifi",
+        "label": "WiFi"
+      },
+      {
+        "icon": "bi bi-shower",
+        "label": "Shower"
+      },
+      {
+        "icon": "bi bi-snow",
+        "label": "AC"
+      }
+    ],
+    "rating": 4.4
+  },
+  {
+    "id": 32,
+    "price": 361,
+    "type": "Suite Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+32",
+    "features": [
+      {
+        "icon": "bi bi-tv",
+        "label": "TV"
+      },
+      {
+        "icon": "bi bi-wifi",
+        "label": "WiFi"
+      },
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      }
+    ],
+    "rating": 3.4
+  },
+  {
+    "id": 33,
+    "price": 190,
+    "type": "Deluxe Double Bed Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+33",
+    "features": [
+      {
+        "icon": "bi bi-tv",
+        "label": "TV"
+      },
+      {
+        "icon": "bi bi-door-closed",
+        "label": "Private Entrance"
+      },
+      {
+        "icon": "bi bi-wifi",
+        "label": "WiFi"
+      },
+      {
+        "icon": "bi bi-droplet",
+        "label": "Hot Water"
+      }
+    ],
+    "rating": 4.1
+  },
+  {
+    "id": 34,
+    "price": 199,
+    "type": "Deluxe Double Bed Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+34",
+    "features": [
+      {
+        "icon": "bi bi-droplet",
+        "label": "Hot Water"
+      },
+      {
+        "icon": "bi bi-shower",
+        "label": "Shower"
+      },
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      }
+    ],
+    "rating": 4.2
+  },
+  {
+    "id": 35,
+    "price": 365,
+    "type": "Suite Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+35",
+    "features": [
+      {
+        "icon": "bi bi-droplet",
+        "label": "Hot Water"
+      },
+      {
+        "icon": "bi bi-snow",
+        "label": "AC"
+      }
+    ],
+    "rating": 3.1
+  },
+  {
+    "id": 36,
+    "price": 167,
+    "type": "Deluxe Single Bed Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+36",
+    "features": [
+      {
+        "icon": "bi bi-door-closed",
+        "label": "Private Entrance"
+      },
+      {
+        "icon": "bi bi-wifi",
+        "label": "WiFi"
+      },
+      {
+        "icon": "bi bi-droplet",
+        "label": "Hot Water"
+      },
+      {
+        "icon": "bi bi-caret-right",
+        "label": "24/7 Support"
+      }
+    ],
+    "rating": 4.1
+  },
+  {
+    "id": 37,
+    "price": 214,
+    "type": "Deluxe Queen Size Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+37",
+    "features": [
+      {
+        "icon": "bi bi-caret-right",
+        "label": "24/7 Support"
+      },
+      {
+        "icon": "bi bi-tv",
+        "label": "TV"
+      },
+      {
+        "icon": "bi bi-door-closed",
+        "label": "Private Entrance"
+      }
+    ],
+    "rating": 4.8
+  },
+  {
+    "id": 38,
+    "price": 168,
+    "type": "Standart Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+38",
+    "features": [
+      {
+        "icon": "bi bi-caret-right",
+        "label": "24/7 Support"
+      },
+      {
+        "icon": "bi bi-building",
+        "label": "Balcony"
+      }
+    ],
+    "rating": 4.2
+  },
+  {
+    "id": 39,
+    "price": 355,
+    "type": "Suite Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+39",
+    "features": [
+      {
+        "icon": "bi bi-door-closed",
+        "label": "Private Entrance"
+      },
+      {
+        "icon": "bi bi-tv",
+        "label": "TV"
+      },
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      },
+      {
+        "icon": "bi bi-caret-right",
+        "label": "24/7 Support"
+      }
+    ],
+    "rating": 3.6
+  },
+  {
+    "id": 40,
+    "price": 235,
+    "type": "Deluxe King Size Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+40",
+    "features": [
+      {
+        "icon": "bi bi-caret-right",
+        "label": "24/7 Support"
+      },
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      },
+      {
+        "icon": "bi bi-door-closed",
+        "label": "Private Entrance"
+      }
+    ],
+    "rating": 4.6
+  },
+  {
+    "id": 41,
+    "price": 144,
+    "type": "Deluxe Single Bed Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+41",
+    "features": [
+      {
+        "icon": "bi bi-snow",
+        "label": "AC"
+      },
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      },
+      {
+        "icon": "bi bi-tv",
+        "label": "TV"
+      },
+      {
+        "icon": "bi bi-door-closed",
+        "label": "Private Entrance"
+      }
+    ],
+    "rating": 4.8
+  },
+  {
+    "id": 42,
+    "price": 495,
+    "type": "Presidential Suite",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+42",
+    "features": [
+      {
+        "icon": "bi bi-caret-right",
+        "label": "24/7 Support"
+      },
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      },
+      {
+        "icon": "bi bi-droplet",
+        "label": "Hot Water"
+      }
+    ],
+    "rating": 4.4
+  },
+  {
+    "id": 43,
+    "price": 171,
+    "type": "Twin Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+43",
+    "features": [
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      },
+      {
+        "icon": "bi bi-droplet",
+        "label": "Hot Water"
+      },
+      {
+        "icon": "bi bi-door-closed",
+        "label": "Private Entrance"
+      },
+      {
+        "icon": "bi bi-snow",
+        "label": "AC"
+      }
+    ],
+    "rating": 4.8
+  },
+  {
+    "id": 44,
+    "price": 339,
+    "type": "Junior Suite",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+44",
+    "features": [
+      {
+        "icon": "bi bi-shower",
+        "label": "Shower"
+      },
+      {
+        "icon": "bi bi-door-closed",
+        "label": "Private Entrance"
+      }
+    ],
+    "rating": 3.2
+  },
+  {
+    "id": 45,
+    "price": 125,
+    "type": "Standart Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+45",
+    "features": [
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      },
+      {
+        "icon": "bi bi-tv",
+        "label": "TV"
+      },
+      {
+        "icon": "bi bi-droplet",
+        "label": "Hot Water"
+      },
+      {
+        "icon": "bi bi-shower",
+        "label": "Shower"
+      }
+    ],
+    "rating": 4.0
+  },
+  {
+    "id": 46,
+    "price": 187,
+    "type": "Deluxe Double Bed Room",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+46",
+    "features": [
+      {
+        "icon": "bi bi-snow",
+        "label": "AC"
+      },
+      {
+        "icon": "bi bi-building",
+        "label": "Balcony"
+      }
+    ],
+    "rating": 3.5
+  },
+  {
+    "id": 47,
+    "price": 283,
+    "type": "Junior Suite",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+47",
+    "features": [
+      {
+        "icon": "bi bi-droplet",
+        "label": "Hot Water"
+      },
+      {
+        "icon": "bi bi-tv",
+        "label": "TV"
+      }
+    ],
+    "rating": 4.3
+  },
+  {
+    "id": 48,
+    "price": 129,
+    "type": "Standart Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+48",
+    "features": [
+      {
+        "icon": "bi bi-wifi",
+        "label": "WiFi"
+      },
+      {
+        "icon": "bi bi-door-closed",
+        "label": "Private Entrance"
+      },
+      {
+        "icon": "bi bi-tv",
+        "label": "TV"
+      },
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      }
+    ],
+    "rating": 3.3
+  },
+  {
+    "id": 49,
+    "price": 323,
+    "type": "Junior Suite",
+    "hot": true,
+    "image": "https://placehold.co/100x80?text=Room+49",
+    "features": [
+      {
+        "icon": "bi bi-wifi",
+        "label": "WiFi"
+      },
+      {
+        "icon": "bi bi-caret-right",
+        "label": "24/7 Support"
+      }
+    ],
+    "rating": 4.8
+  },
+  {
+    "id": 50,
+    "price": 178,
+    "type": "Standart Room",
+    "hot": false,
+    "image": "https://placehold.co/100x80?text=Room+50",
+    "features": [
+      {
+        "icon": "bi bi-shower",
+        "label": "Shower"
+      },
+      {
+        "icon": "bi bi-door-closed",
+        "label": "Private Entrance"
+      },
+      {
+        "icon": "bi bi-cup-straw",
+        "label": "Mini Bar"
+      },
+      {
+        "icon": "bi bi-droplet",
+        "label": "Hot Water"
+      }
+    ],
+    "rating": 4.4
+  }
+]
