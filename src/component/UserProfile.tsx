@@ -3,34 +3,27 @@ import React from 'react';
 interface UserProfileProps {
   name: string;
   email: string;
-  avatarUrl?: string;
+  avatarUrl: string;
+  onLogout: () => void;
 }
 
-const UserProfile: React.FC<UserProfileProps> = ({ name, email, avatarUrl }) => {
+const UserProfile: React.FC<UserProfileProps> = ({ name, email, avatarUrl, onLogout }) => {
   return (
     <div
-      className="position-absolute end-0 mt-2 p-3 border rounded shadow bg-white"
-      style={{ width: '220px', top: '60px', zIndex: 1000 }}
+      className="position-absolute top-100 end-0 mt-2 bg-white border rounded shadow p-3"
+      style={{ zIndex: 999, minWidth: 200 }}
     >
-      <div className="d-flex align-items-center mb-2">
-        <img
-          src={avatarUrl || `https://ui-avatars.com/api/?name=${name.replace(' ', '+')}`}
-          alt="avatar"
-          className="rounded-circle me-2"
-          width={40}
-          height={40}
-        />
+      <div className="d-flex align-items-center gap-2 mb-2">
+        <img src={avatarUrl} alt="avatar" className="rounded-circle" width={40} height={40} />
         <div>
           <strong>{name}</strong>
+          <div className="text-muted" style={{ fontSize: 12 }}>{email}</div>
         </div>
       </div>
-
-      <div className="d-flex align-items-center text-muted mb-3" style={{ fontSize: 14 }}>
-        <i className="bi bi-envelope me-2"></i>
-        <span>{email}</span>
-      </div>
-
-      <button className="btn btn-outline-danger btn-sm w-100">Logout</button>
+      <hr />
+      <button className="btn btn-outline-danger w-100" onClick={onLogout}>
+        Logout
+      </button>
     </div>
   );
 };

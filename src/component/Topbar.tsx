@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import UserProfile from './UserProfile'; 
+import { useNavigate } from 'react-router-dom';
 
 interface TopbarProps {
   onToggleSidebar: () => void;
@@ -7,7 +8,11 @@ interface TopbarProps {
 
 const Topbar: React.FC<TopbarProps> = ({ onToggleSidebar }) => {
   const [showUserBox, setShowUserBox] = useState(false);
+  const navigate = useNavigate();
 
+  const handleLogout = () => {
+    navigate('/login'); 
+  };
   const toggleUserBox = () => {
     setShowUserBox(!showUserBox);
   };
@@ -34,7 +39,7 @@ const Topbar: React.FC<TopbarProps> = ({ onToggleSidebar }) => {
         <i className="bi bi-clock fs-5"></i>
 
         <div className="d-none d-lg-block text-end">
-          <strong>Brooklyn Simmons</strong>
+          <strong>Muthu Mariappan</strong>
           <div className="text-muted" style={{ fontSize: 12 }}>
             Head Manager
           </div>
@@ -50,9 +55,10 @@ const Topbar: React.FC<TopbarProps> = ({ onToggleSidebar }) => {
 
         {showUserBox && (
           <UserProfile
-            name="Brooklyn Simmons"
-            email="brooklyn@example.com"
+            name="Muthumariappan"
+            email="muthumariappan@gmail.com"
             avatarUrl="https://i.pravatar.cc/100"
+            onLogout={handleLogout}
           />
         )}
       </div>
@@ -61,3 +67,4 @@ const Topbar: React.FC<TopbarProps> = ({ onToggleSidebar }) => {
 };
 
 export default Topbar;
+
