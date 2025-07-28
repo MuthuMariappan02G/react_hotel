@@ -1,0 +1,135 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+const SignUp: React.FC = () => {
+  const SignUpImage = require('../assets/images/LogIn3.jpg');
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState<'success' | 'danger'>('success');
+  const navigate = useNavigate();
+
+  const handleSignUp = () => {
+    if (!username || !email || !phoneNumber || !password || !confirmPassword) {
+      setMessage('Please fill in all fields');
+      setMessageType('danger');
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setMessage('Passwords do not match');
+      setMessageType('danger');
+      return;
+    }
+
+    setMessage('Sign Up Successful!');
+    setMessageType('success');
+
+    // Optional: navigate to login after delay
+    setTimeout(() => {
+      navigate('/login');
+    }, 2000);
+  };
+
+  const handleLoginRedirect = () => {
+    navigate('/login');
+  };
+
+  return (
+    <div className="container-fluid vh-100 d-flex">
+      {/* Left Image */}
+      <div className="d-none d-md-block col-md-6 p-0">
+        <img
+          src={SignUpImage}
+          alt="signup"
+          className="img-fluid h-100 w-100"
+          style={{ objectFit: 'cover' }}
+        />
+      </div>
+
+      {/* Right Form */}
+      <div className="col-md-6 d-flex align-items-center justify-content-center p-4">
+        <div className="w-100" style={{ maxWidth: 450 }}>
+          <h3 className="text-center mb-4 fw-bold">Sign Up</h3>
+
+          {/* Alerts */}
+          {message && (
+            <div className={`alert alert-${messageType} text-center`} role="alert">
+              {message}
+            </div>
+          )}
+
+          {/* Form Fields */}
+          <div className="form-group mb-3">
+            <label>Username</label>
+            <input
+              type="text"
+              className="form-control"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+
+          <div className="form-group mb-3">
+            <label>Email</label>
+            <input
+              type="email"
+              className="form-control"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+
+          <div className="form-group mb-3">
+            <label>Phone Number</label>
+            <input
+              type="tel"
+              className="form-control"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+            />
+          </div>
+
+          <div className="form-group mb-3">
+            <label>Password</label>
+            <input
+              type="password"
+              className="form-control"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          <div className="form-group mb-4">
+            <label>Confirm Password</label>
+            <input
+              type="password"
+              className="form-control"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          </div>
+
+          <div className="d-grid mb-3">
+            <button className="btn btn-primary" onClick={handleSignUp}>
+              Sign Up
+            </button>
+          </div>
+
+          <div className="text-center">
+            Already have an account?{' '}
+            <button className="btn btn-link p-0" onClick={handleLoginRedirect}>
+              Log in here
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SignUp;
