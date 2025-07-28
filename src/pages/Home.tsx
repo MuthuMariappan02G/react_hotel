@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
 import Sidebar from '../component/Sidebar';
 import Topbar from '../component/Topbar';
 import SearchRoom from '../component/SearchRoom';
@@ -15,12 +16,12 @@ export interface SearchFilters {
 }
 
 const Home: React.FC = () => {
+  const navigate = useNavigate();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
   const [selectedIcon, setSelectedIcon] = useState<string>(() => {
     return localStorage.getItem('activeIcon') || 'PieChart';
   });
-
   const [filters, setFilters] = useState<SearchFilters | null>(null);
 
   const toggleSidebar = () => setIsDrawerOpen(!isDrawerOpen);
@@ -32,9 +33,10 @@ const Home: React.FC = () => {
     closeDrawer();
   };
 
-  // const handleSearch = (filterValues: SearchFilters) => {
-  //   setFilters(filterValues);
-  // };
+  const handleLogout = () => {
+    localStorage.removeItem('isAuthenticated');
+    navigate('/login');
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -49,9 +51,15 @@ const Home: React.FC = () => {
       {/* Sidebar */}
       <div className="d-none d-md-block position-fixed bg-light" style={{ width: 80, height: '100vh' }}>
         <Sidebar onIconClick={handleIconClick} activeIcon={selectedIcon} />
+        {/* Optional logout button for desktop */}
+        <div className="text-center mt-3">
+          <button onClick={handleLogout} className="btn btn-sm btn-outline-danger">
+            Logout
+          </button>
+        </div>
       </div>
 
-      {/* Main */}
+      {/* Main Content */}
       <div className="flex-grow-1" style={{ marginLeft: isDesktop ? 80 : 0 }}>
         <Topbar onToggleSidebar={toggleSidebar} />
 
@@ -65,6 +73,11 @@ const Home: React.FC = () => {
               <i className="bi bi-x fs-4"></i>
             </button>
             <Sidebar onIconClick={handleIconClick} activeIcon={selectedIcon} />
+            <div className="text-center mt-3">
+              <button onClick={handleLogout} className="btn btn-sm btn-outline-danger">
+                Logout
+              </button>
+            </div>
           </div>
         )}
 
@@ -84,6 +97,11 @@ const Home: React.FC = () => {
             ) : (
               <div className="text-muted text-center p-5">Coming Soon...</div>
             )}
+          </div>
+
+          {/* Nested routing outlet */}
+          <div className="mt-4">
+            <Outlet />
           </div>
         </div>
       </div>
