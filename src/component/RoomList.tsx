@@ -30,28 +30,52 @@ const RoomList: React.FC<Props> = ({ filters }) => {
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
   const [selectedCategory, setSelectedCategory] = useState('All Rooms');
 
+  // modal + sorting states
+  const [showSortModal, setShowSortModal] = useState(false);
+  const [sortType, setSortType] = useState<string>('Relevance');
+
+  // committed filter values (applied only on Apply)
+  const [minPrice, setMinPrice] = useState<number | ''>('');
+  const [maxPrice, setMaxPrice] = useState<number | ''>('');
+  const [minRating, setMinRating] = useState<number | ''>('');
+
+  // temporary modal input values
+  const [tempMinPrice, setTempMinPrice] = useState<number | ''>('');
+  const [tempMaxPrice, setTempMaxPrice] = useState<number | ''>('');
+  const [tempMinRating, setTempMinRating] = useState<number | ''>('');
+
   const categories = ['All Rooms', 'Deluxe', 'Standart', 'Presidential', 'Suite', 'Junior Suite', 'Twin Room'];
 
-const filteredRooms = useMemo(() => {
-  let result = [...roomsData];
+  const filteredRooms = useMemo(() => {
+    let result = [...roomsData];
 
-  // Apply search filter
-  if (filters?.roomType && filters.roomType.trim() !== '') {
-    result = result.filter(room =>
-      room.type.toLowerCase().includes(filters.roomType.toLowerCase())
-    );
-  }
+    // Apply search filter
+    if (filters?.roomType && filters.roomType.trim() !== '') {
+      result = result.filter(room =>
+        room.type.toLowerCase().includes(filters.roomType.toLowerCase())
+      );
+    }
 
-  // Apply category filter with partial match
-  if (selectedCategory !== 'All Rooms') {
-    result = result.filter(room =>
-      room.type.toLowerCase().includes(selectedCategory.toLowerCase())
-    );
-  }
+    // Apply category filter with partial match
+    if (selectedCategory !== 'All Rooms') {
+      result = result.filter(room =>
+        room.type.toLowerCase().includes(selectedCategory.toLowerCase())
+      );
+    }
 
-  return result;
-}, [filters, selectedCategory]);
+    // Apply chosen sort filter
+    if (sortType === 'Price' && minPrice !== '' && maxPrice !== '') {
+      result = result.filter(room => room.price >= minPrice && room.price <= maxPrice);
+      result.sort((a, b) => a.price - b.price);
+    }
 
+    if (sortType === 'Rating' && minRating !== '') {
+      result = result.filter(room => (room.rating ?? 0) >= minRating);
+      result.sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
+    }
+
+    return result;
+  }, [filters, selectedCategory, sortType, minPrice, maxPrice, minRating]);
 
   const itemsPerPage = 4;
   const startIndex = currentPage * itemsPerPage;
@@ -85,10 +109,22 @@ const filteredRooms = useMemo(() => {
         <div className="d-flex align-items-center gap-2">
           <i className="bi bi-filter"></i>
           <span className="text-muted">Sort by:</span>
-          <select className="form-select form-select-sm" style={{ width: 120 }}>
-            <option>Relevance</option>
-            <option>Price</option>
-            <option>Rating</option>
+          <select
+            className="form-select form-select-sm"
+            style={{ width: 120 }}
+            value={sortType}
+            onChange={(e) => {
+              const newSort = e.target.value;
+              setSortType(newSort);
+              setTempMinPrice(minPrice);
+              setTempMaxPrice(maxPrice);
+              setTempMinRating(minRating);
+              setShowSortModal(true);
+            }}
+          >
+            <option value="Relevance">Relevance</option>
+            <option value="Price">Price</option>
+            <option value="Rating">Rating</option>
           </select>
         </div>
       </div>
@@ -195,6 +231,75 @@ const filteredRooms = useMemo(() => {
       {/* Room Detail Modal */}
       {selectedRoom && (
         <RoomDetail room={selectedRoom} onClose={closeRoomDetail} />
+      )}
+
+      {/* Sort Modal */}
+      {showSortModal && (
+        <div className="modal fade show d-block" tabIndex={-1} style={{ background: 'rgba(0,0,0,0.5)' }}>
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">{sortType}</h5>
+                <button type="button" className="btn-close" onClick={() => setShowSortModal(false)}></button>
+              </div>
+
+              <div className="modal-body">
+                {sortType === 'Relevance' && (
+                  <p className="text-muted">Showing rooms by relevance.</p>
+                )}
+
+                {sortType === 'Price' && (
+                  <div className="d-flex gap-2">
+                    <input
+                      type="number"
+                      className="form-control"
+                      placeholder="Min"
+                      value={tempMinPrice}
+                      onChange={(e) => setTempMinPrice(e.target.value === '' ? '' : Number(e.target.value))}
+                    />
+                    <span className="align-self-center">-</span>
+                    <input
+                      type="number"
+                      className="form-control"
+                      placeholder="Max"
+                      value={tempMaxPrice}
+                      onChange={(e) => setTempMaxPrice(e.target.value === '' ? '' : Number(e.target.value))}
+                    />
+                  </div>
+                )}
+
+                {sortType === 'Rating' && (
+                  <select
+                    className="form-select"
+                    value={tempMinRating}
+                    onChange={(e) => setTempMinRating(e.target.value === '' ? '' : Number(e.target.value))}
+                  >
+                    <option value="">Select minimum rating</option>
+                    <option value="5">5 ★</option>
+                    <option value="4">4 ★ & above</option>
+                    <option value="3">3 ★ & above</option>
+                  </select>
+                )}
+              </div>
+
+              <div className="modal-footer">
+                <button className="btn btn-secondary" onClick={() => setShowSortModal(false)}>Cancel</button>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => {
+                    setMinPrice(tempMinPrice);
+                    setMaxPrice(tempMaxPrice);
+                    setMinRating(tempMinRating);
+                    setShowSortModal(false);
+                    setCurrentPage(0);
+                  }}
+                >
+                  Apply
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
