@@ -3,13 +3,10 @@ import React from 'react';
 const LastReservation: React.FC = () => {
   return (
     <div className="mt-4">
-      {/* Title and Menu Icon */}
       <div className="d-flex justify-content-between align-items-center mb-2">
         <h6 className="mb-0 fw-bold">Last Reservation</h6>
         <i className="bi bi-three-dots-vertical text-muted"></i>
       </div>
-
-      {/* Reservation Card */}
       <div className="card d-flex flex-row align-items-center p-3 gap-2 shadow-sm">
         <img
           src="https://placehold.co/60x60?text=Room"

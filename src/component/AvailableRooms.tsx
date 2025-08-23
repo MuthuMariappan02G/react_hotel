@@ -13,11 +13,6 @@ export interface SearchFilters {
 
 const AvailableRooms: React.FC = () => {
   const [filters, setFilters] = useState<SearchFilters | null>(null);
-
-  // const handleSearch = (filterValues: SearchFilters) => {
-  //   setFilters(filterValues);
-  // };
-
   return (
     <div className="row g-3">
       <div className="col-md-4">

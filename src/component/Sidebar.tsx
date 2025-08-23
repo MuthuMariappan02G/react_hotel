@@ -2,7 +2,7 @@ import React from 'react';
 
 interface SidebarProps {
   onIconClick: (icon: string) => void;
-  activeIcon: string; // <-- added this
+  activeIcon: string;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ onIconClick, activeIcon }) => {
