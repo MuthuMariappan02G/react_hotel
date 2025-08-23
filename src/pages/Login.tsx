@@ -61,7 +61,7 @@ const Login: React.FC = () => {
         </div>
         <div className="d-block d-md-none p-3">
           <div className="d-flex justify-content-center align-items-center">
-            <Lottie animationData={LoginLottie} loop={true} style={{ width: 150, height: 150 }} />
+            <Lottie animationData={LoginLottie} loop={true} style={{ maxWidth: '400px', width: '50%' }} />
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center p-5">

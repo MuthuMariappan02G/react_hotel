@@ -64,11 +64,11 @@ const Home: React.FC = () => {
     <div className="d-flex">
       <div className="d-none d-md-block position-fixed bg-light" style={{ width: 80, height: '100vh' }}>
         <Sidebar onIconClick={handleIconClick} activeIcon={selectedIcon} />
-        <div className="text-center mt-3">
+        {/* <div className="text-center mt-3">
           <button onClick={handleLogout} className="btn btn-sm btn-outline-danger">
             Logout
           </button>
-        </div>
+        </div> */}
       </div>
 
       <div className="flex-grow-1" style={{ marginLeft: isDesktop ? 80 : 0 }}>
@@ -108,7 +108,7 @@ const Home: React.FC = () => {
               </>
             ) : (
               <div className="d-flex justify-content-center align-items-center">
-                <Lottie animationData={CommingSoon} loop={true} style={{ width: 500, height: 380 }} />
+                <Lottie animationData={CommingSoon} loop={true} style={{ width: 250, height: 250 }} />
               </div>
             )}
           </div>
