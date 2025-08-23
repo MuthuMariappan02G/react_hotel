@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Lottie from 'lottie-react';
+import LoginLottie from '../mock/Lottie/Green Login.json';
+import Loading from '../mock/Lottie/Loading 40 _ Paperplane.json';
 
 const Login: React.FC = () => {
-  const LoginImage = require('../assets/images/Login.jpg');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailVerified, setEmailVerified] = useState(false);
   const [message, setMessage] = useState('');
   const [messageType, setMessageType] = useState<'success' | 'danger' | ''>('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleCheckEmail = () => {
@@ -25,107 +28,114 @@ const Login: React.FC = () => {
   const handleCheckPassword = () => {
     if (password === 'Muthu@02') {
       localStorage.setItem('isAuthenticated', 'true');
-      setMessage('Login successful!');
-      setMessageType('success');
+      setLoading(true);
       setTimeout(() => {
         navigate('/');
-      }, 2000);
+      }, 3000);
     } else {
       setMessage('Incorrect Password');
       setMessageType('danger');
     }
   };
 
-  return (
-    <div className="container-fluid vh-100 d-flex">
-      {/* Left Image */}
-      <div className="d-none d-md-block col-md-6 p-0">
-        <img
-          src={LoginImage}
-          alt="login"
-          className="img-fluid h-100 w-100"
-          style={{ objectFit: 'cover' }}
-        />
+  const handleNavigateWithLoading = (path: string, state?: any) => {
+    setLoading(true);
+    setTimeout(() => {
+      navigate(path, state ? { state } : undefined);
+    }, 3000);
+  };
+
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center align-items-center vh-100">
+        <Lottie animationData={Loading} loop={true} style={{ width: 400, height: 400 }} />
       </div>
+    );
+  }
 
-      {/* Right Form */}
-      <div className="col-md-6 d-flex flex-column justify-content-center p-5">
-        <h3 className="text-center mb-4 fw-bold">Welcome back!!</h3>
-        <h1 className="text-center mb-4 fw-bold text-primary">Log In</h1>
-
-        {/* Alerts */}
-        {message && (
-          <div className={`alert alert-${messageType} text-center`} role="alert">
-            {message}
-          </div>
-        )}
-
-        {/* Email Input */}
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            Email address
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-              setMessage('');
-            }}
-          />
+  return (
+    <div className="container-fluid vh-100">
+      <div className="row h-100">
+        <div className="d-none d-md-flex col-md-6 p-0 justify-content-center align-items-center">
+          <Lottie animationData={LoginLottie} loop={true} style={{ width: 500, height: 500 }} />
         </div>
+        <div className="d-block d-md-none p-3">
+          <div className="d-flex justify-content-center align-items-center">
+            <Lottie animationData={LoginLottie} loop={true} style={{ width: 150, height: 150 }} />
+          </div>
+        </div>
+        <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center p-5">
+          <div style={{ maxWidth: '400px', width: '100%' }}>
+            <h3 className="text-center mb-4 fw-bold">Welcome back!!</h3>
+            <h1 className="text-center mb-4 fw-bold text-primary">Log In</h1>
 
-        {/* Password Input */}
-        {emailVerified && (
-          <div className="mb-3">
-            <label htmlFor="password" className="form-label">
-              Password
-            </label>
-            <input
-              type="password"
-              className="form-control"
-              id="password"
-              placeholder="Enter your password"
-              value={password}
-              onChange={(e) => {
-                setPassword(e.target.value);
-                setMessage('');
-              }}
-            />
-            <div className="text-left mt-2">
+            {message && (
+              <div className={`alert alert-${messageType} text-center`} role="alert">
+                {message}
+              </div>
+            )}
+
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">Email address</label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setMessage('');
+                }}
+              />
+            </div>
+
+            {emailVerified && (
+              <div className="mb-3">
+                <label htmlFor="password" className="form-label">Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="password"
+                  placeholder="Enter your password"
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    setMessage('');
+                  }}
+                />
+                <div className="text-left mt-2">
+                  <button
+                    className="btn btn-link p-0"
+                    onClick={() =>
+                      handleNavigateWithLoading('/forgotpassword', { Data: { Email: email } })
+                    }
+                  >
+                    Forgot Password?
+                  </button>
+                </div>
+              </div>
+            )}
+
+            <div className="d-grid mb-3">
+              <button
+                className="btn btn-primary"
+                onClick={emailVerified ? handleCheckPassword : handleCheckEmail}
+              >
+                {emailVerified ? 'Log In' : 'Continue'}
+              </button>
+            </div>
+
+            <div className="text-center">
+              <span>Don't have an account? </span>
               <button
                 className="btn btn-link p-0"
-                onClick={() =>
-                  navigate('/forgotpassword', {
-                    state: { Data: { Email: email } },
-                  })
-                }
+                onClick={() => handleNavigateWithLoading('/signup')}
               >
-                Forgot Password?
+                Sign up here
               </button>
             </div>
           </div>
-        )}
-
-        {/* Continue or Login Button */}
-        <div className="d-grid mb-3">
-          <button
-            className="btn btn-primary"
-            onClick={emailVerified ? handleCheckPassword : handleCheckEmail}
-          >
-            {emailVerified ? 'Log In' : 'Continue'}
-          </button>
-        </div>
-
-        {/* Sign Up Link */}
-        <div className="text-center">
-          <span>Don't have an account? </span>
-          <button className="btn btn-link p-0" onClick={() => navigate('/signup')}>
-            Sign up here
-          </button>
         </div>
       </div>
     </div>

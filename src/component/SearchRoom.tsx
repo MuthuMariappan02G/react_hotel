@@ -8,18 +8,18 @@ interface Props {
 const SearchRoom: React.FC<Props> = ({ onSearch }) => {
   const [checkIn, setCheckIn] = useState('');
   const [checkOut, setCheckOut] = useState('');
-  const [adults, setAdults] = useState<number | 0>(0);
-  const [children, setChildren] = useState<number | 0>(0);
-  const [rooms, setRooms] = useState<number | 0>(0);
+  const [adults, setAdults] = useState<string>('');  
+  const [children, setChildren] = useState<string>('');
+  const [rooms, setRooms] = useState<string>('');    
   const [roomType, setRoomType] = useState('');
 
   const handleSearch = () => {
     onSearch({
       checkIn,
       checkOut,
-      adults: adults || 0,
-      children: children || 0,
-      rooms: rooms || 0,
+      adults: adults ? Number(adults) : 0,
+      children: children ? Number(children) : 0,
+      rooms: rooms ? Number(rooms) : 0,
       roomType,
     });
   };
@@ -27,11 +27,11 @@ const SearchRoom: React.FC<Props> = ({ onSearch }) => {
   const handleClear = () => {
     setCheckIn('');
     setCheckOut('');
-    setAdults(0);
-    setChildren(0);
-    setRooms(0);
+    setAdults('');
+    setChildren('');
+    setRooms('');
     setRoomType('');
-    onSearch(null); // signal to reset filters
+    onSearch(null);
   };
 
   return (
@@ -64,9 +64,10 @@ const SearchRoom: React.FC<Props> = ({ onSearch }) => {
         <label>Adult</label>
         <input
           type="number"
+          min="0"
           className="form-control w-25"
           value={adults}
-          onChange={(e: any) => setAdults(e.target.value === 0 ? 0 : +e.target.value)}
+          onChange={(e) => setAdults(e.target.value)}
         />
       </div>
 
@@ -74,9 +75,10 @@ const SearchRoom: React.FC<Props> = ({ onSearch }) => {
         <label>Children</label>
         <input
           type="number"
+          min="0"
           className="form-control w-25"
           value={children}
-          onChange={(e: any) => setChildren(e.target.value === 0 ? 0 : +e.target.value)}
+          onChange={(e) => setChildren(e.target.value)}
         />
       </div>
 
@@ -84,9 +86,10 @@ const SearchRoom: React.FC<Props> = ({ onSearch }) => {
         <label>Room</label>
         <input
           type="number"
+          min="0"
           className="form-control w-25"
           value={rooms}
-          onChange={(e: any) => setRooms(e.target.value === 0 ? 0 : +e.target.value)}
+          onChange={(e) => setRooms(e.target.value)}
         />
       </div>
 

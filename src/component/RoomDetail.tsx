@@ -35,7 +35,6 @@ const RoomDetail: React.FC<RoomDetailProps> = ({ room, onClose }) => {
     setCurrentImageIndex(prev => (prev === imageList.length - 1 ? 0 : prev + 1));
   };
 
-  // Prevent background scroll when modal is open
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => {
@@ -52,7 +51,6 @@ const RoomDetail: React.FC<RoomDetailProps> = ({ room, onClose }) => {
       <div className="modal-dialog modal-lg modal-dialog-centered">
         <div className="modal-content position-relative">
           <div className="modal-body">
-            {/* Image Gallery */}
             <div className="d-flex justify-content-center align-items-center position-relative mb-4">
               {imageList.length > 1 && (
                 <button
@@ -62,14 +60,12 @@ const RoomDetail: React.FC<RoomDetailProps> = ({ room, onClose }) => {
                   <i className="bi bi-chevron-left"></i>
                 </button>
               )}
-
               <img
                 src={imageList[currentImageIndex]}
                 alt={`room-${currentImageIndex}`}
                 className="rounded"
                 style={{ height: 180, width: 'auto' }}
               />
-
               {imageList.length > 1 && (
                 <button
                   className="btn btn-sm btn-outline-secondary position-absolute end-0"
@@ -79,14 +75,11 @@ const RoomDetail: React.FC<RoomDetailProps> = ({ room, onClose }) => {
                 </button>
               )}
             </div>
-
-            {/* Room Info */}
             <div className="text-center">
               <h5>{room.type}</h5>
               <p><strong>ID:</strong> {room.id}</p>
               <p><strong>Price:</strong> ${room.price} / night</p>
               {room.hot && <span className="badge bg-danger mb-2">Hot</span>}
-
               <div className="text-muted mb-2">
                 <strong>Features:</strong>
                 <div className="d-flex flex-wrap justify-content-center gap-2 mt-2">
@@ -98,19 +91,16 @@ const RoomDetail: React.FC<RoomDetailProps> = ({ room, onClose }) => {
                   ))}
                 </div>
               </div>
-
               {room.rating && <p><strong>Rating:</strong> {room.rating} / 5</p>}
               {room.isBooked && room.lastCheckout && (
                 <p><strong>Last Checkout:</strong> {room.lastCheckout}</p>
               )}
             </div>
-
              <div className="text-center mt-4">
               <button className="btn btn-secondary px-4" onClick={onClose}>
                 Close
               </button>
             </div>
-
           </div>
         </div>
       </div>
