@@ -25,7 +25,7 @@ const App: React.FC = () => {
   if (!isAuthenticated) {
     return <Navigate to="/login" />;
   }
-
+  
   return (
     <Routes>
       <Route path="/" element={<Home />}>
