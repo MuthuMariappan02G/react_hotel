@@ -2,6 +2,8 @@ import React, { useState, useMemo } from 'react';
 import roomsData from '../mock/roomsData.json';
 import RoomDetail from './RoomDetail';
 import { SearchFilters } from './AvailableRooms';
+import Lottie from 'lottie-react';
+import NoData from '../mock/Lottie/Error 404.json'
 
 interface Feature {
   icon: string;
@@ -30,16 +32,13 @@ const RoomList: React.FC<Props> = ({ filters }) => {
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
   const [selectedCategory, setSelectedCategory] = useState('All Rooms');
 
-  // modal + sorting states
   const [showSortModal, setShowSortModal] = useState(false);
   const [sortType, setSortType] = useState<string>('Relevance');
 
-  // committed filter values (applied only on Apply)
   const [minPrice, setMinPrice] = useState<number | ''>('');
   const [maxPrice, setMaxPrice] = useState<number | ''>('');
   const [minRating, setMinRating] = useState<number | ''>('');
 
-  // temporary modal input values
   const [tempMinPrice, setTempMinPrice] = useState<number | ''>('');
   const [tempMaxPrice, setTempMaxPrice] = useState<number | ''>('');
   const [tempMinRating, setTempMinRating] = useState<number | ''>('');
@@ -48,22 +47,16 @@ const RoomList: React.FC<Props> = ({ filters }) => {
 
   const filteredRooms = useMemo(() => {
     let result = [...roomsData];
-
-    // Apply search filter
     if (filters?.roomType && filters.roomType.trim() !== '') {
       result = result.filter(room =>
         room.type.toLowerCase().includes(filters.roomType.toLowerCase())
       );
     }
-
-    // Apply category filter with partial match
     if (selectedCategory !== 'All Rooms') {
       result = result.filter(room =>
         room.type.toLowerCase().includes(selectedCategory.toLowerCase())
       );
     }
-
-    // Apply chosen sort filter
     if (sortType === 'Price' && minPrice !== '' && maxPrice !== '') {
       result = result.filter(room => room.price >= minPrice && room.price <= maxPrice);
       result.sort((a, b) => a.price - b.price);
@@ -99,7 +92,6 @@ const RoomList: React.FC<Props> = ({ filters }) => {
 
   return (
     <div className="card p-3">
-      {/* Header */}
       <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3 gap-2">
         <div>
           <h4 className="mb-0">Available Rooms</h4>
@@ -129,7 +121,6 @@ const RoomList: React.FC<Props> = ({ filters }) => {
         </div>
       </div>
 
-      {/* Category Filters */}
       <div className="mb-4 d-flex flex-wrap gap-2">
         {categories.map((label, idx) => (
           <button
@@ -145,9 +136,17 @@ const RoomList: React.FC<Props> = ({ filters }) => {
         ))}
       </div>
 
-      {/* Room Cards */}
       {visibleRooms.length === 0 ? (
-        <div className="text-center text-muted py-5 fs-5">No Rooms are Available Today</div>
+        <div className="col-12 d-flex flex-column justify-content-center align-items-center p-3">
+          <Lottie
+            animationData={NoData}
+            loop={true}
+            style={{ width: '100%', maxWidth: 370, height: 'auto', maxHeight: 500 }}
+          />
+          <div className="text-center text-muted py-4 fs-5">
+            No Rooms are Available Today
+          </div>
+        </div>
       ) : (
         visibleRooms.map((room) => (
           <div key={room.id} className="card mb-3 p-3">
@@ -203,7 +202,6 @@ const RoomList: React.FC<Props> = ({ filters }) => {
         ))
       )}
 
-      {/* Pagination */}
       {visibleRooms.length > 0 && (
         <div className="d-flex justify-content-between align-items-center mt-3">
           <button
@@ -228,12 +226,10 @@ const RoomList: React.FC<Props> = ({ filters }) => {
         </div>
       )}
 
-      {/* Room Detail Modal */}
       {selectedRoom && (
         <RoomDetail room={selectedRoom} onClose={closeRoomDetail} />
       )}
 
-      {/* Sort Modal */}
       {showSortModal && (
         <div className="modal fade show d-block" tabIndex={-1} style={{ background: 'rgba(0,0,0,0.5)' }}>
           <div className="modal-dialog modal-dialog-centered">
