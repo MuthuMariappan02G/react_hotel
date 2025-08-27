@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "price": 239,
+        "roomType": "Luxury King Size",
+        "checkIn": "2025-08-22",
+        "checkOut": "2025-08-24",
+        "image": "https://placehold.co/80x80?text=Room+1"
+    },
+    {
+        "id": 2,
+        "price": 199,
+        "roomType": "Deluxe Queen",
+        "checkIn": "2025-08-25",
+        "checkOut": "2025-08-28",
+        "image": "https://placehold.co/80x80?text=Room+2"
+    },
+    {
+        "id": 3,
+        "price": 289,
+        "roomType": "Ocean View Suite",
+        "checkIn": "2025-08-29",
+        "checkOut": "2025-09-01",
+        "image": "https://placehold.co/80x80?text=Room+3"
+    },
+    {
+        "id": 4,
+        "price": 179,
+        "roomType": "Standard Double",
+        "checkIn": "2025-09-02",
+        "checkOut": "2025-09-04",
+        "image": "https://placehold.co/80x80?text=Room+4"
+    },
+    {
+        "id": 5,
+        "price": 259,
+        "roomType": "Penthouse",
+        "checkIn": "2025-09-05",
+        "checkOut": "2025-09-08",
+        "image": "https://placehold.co/80x80?text=Room+5"
+    },
+    {
+        "id": 6,
+        "price": 149,
+        "roomType": "Economy Single",
+        "checkIn": "2025-09-09",
+        "checkOut": "2025-09-11",
+        "image": "https://placehold.co/80x80?text=Room+6"
+    },
+    {
+        "id": 7,
+        "price": 209,
+        "roomType": "Garden View",
+        "checkIn": "2025-09-12",
+        "checkOut": "2025-09-14",
+        "image": "https://placehold.co/80x80?text=Room+7"
+    },
+    {
+        "id": 8,
+        "price": 189,
+        "roomType": "Business Suite",
+        "checkIn": "2025-09-15",
+        "checkOut": "2025-09-18",
+        "image": "https://placehold.co/80x80?text=Room+8"
+    },
+    {
+        "id": 9,
+        "price": 229,
+        "roomType": "Mountain Retreat",
+        "checkIn": "2025-09-19",
+        "checkOut": "2025-09-21",
+        "image": "https://placehold.co/80x80?text=Room+9"
+    },
+    {
+        "id": 10,
+        "price": 269,
+        "roomType": "Skyline View",
+        "checkIn": "2025-09-22",
+        "checkOut": "2025-09-25",
+        "image": "https://placehold.co/80x80?text=Room+10"
+    }
+]
