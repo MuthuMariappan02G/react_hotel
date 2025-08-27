@@ -48,7 +48,7 @@ const RoomDetail: React.FC<RoomDetailProps> = ({ room, onClose }) => {
       style={{ backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 1050 }}
       role="dialog"
     >
-      <div className="modal-dialog modal-lg modal-dialog-centered">
+      <div className="modal-dialog modal-lg modal-dialog-centered"  style={{ maxWidth: '550px' }} >
         <div className="modal-content position-relative">
           <div className="modal-body">
             <div className="d-flex justify-content-center align-items-center position-relative mb-4">
