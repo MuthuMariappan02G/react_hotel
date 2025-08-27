@@ -59,13 +59,11 @@ const Login: React.FC = () => {
         <div className="d-none d-md-flex col-md-6 p-0 justify-content-center align-items-center">
           <Lottie animationData={LoginLottie} loop={true} style={{ width: 500, height: 500 }} />
         </div>
-        <div className="d-block d-md-none p-3">
-          <div className="d-flex justify-content-center align-items-center">
-            <Lottie animationData={LoginLottie} loop={true} style={{ maxWidth: '400px', width: '50%' }} />
-          </div>
+        <div className="d-block d-md-none d-flex justify-content-center align-items-center">
+          <Lottie animationData={LoginLottie} loop={true} style={{ width: 450, height: 320 }} />
         </div>
         <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center p-5">
-          <div style={{ maxWidth: '400px', width: '100%' }}>
+          <div style={{ maxWidth: '450px', width: '100%' }}>
             <h3 className="text-center mb-4 fw-bold">Welcome back!!</h3>
             <h1 className="text-center mb-4 fw-bold text-primary">Log In</h1>
 
