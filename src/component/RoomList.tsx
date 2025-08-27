@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import roomsData from "../mock/roomsData.json";
 import RoomDetail from "./RoomDetail";
+import MakeReservation from "./MakeReservation";
 import { SearchFilters } from "./AvailableRooms";
 import Lottie from "lottie-react";
 import NoData from "../mock/Lottie/Error 404.json";
@@ -31,6 +32,7 @@ interface Props {
 const RoomList: React.FC<Props> = ({ filters }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
+  const [reservationRoom, setReservationRoom] = useState<Room | null>(null);
   const [selectedCategory, setSelectedCategory] = useState("All Rooms");
 
   const [showSortModal, setShowSortModal] = useState(false);
@@ -113,6 +115,9 @@ const RoomList: React.FC<Props> = ({ filters }) => {
 
   const openRoomDetail = (room: Room) => setSelectedRoom(room);
   const closeRoomDetail = () => setSelectedRoom(null);
+
+  const openReservation = (room: Room) => setReservationRoom(room);
+  const closeReservation = () => setReservationRoom(null);
 
   return (
     <>
@@ -244,7 +249,10 @@ const RoomList: React.FC<Props> = ({ filters }) => {
                   >
                     Room Detail
                   </button>
-                  <button className="btn btn-primary btn-sm">
+                  <button
+                    className="btn btn-primary btn-sm"
+                    onClick={() => openReservation(room)}
+                  >
                     Make Reservation
                   </button>
                 </div>
@@ -280,6 +288,33 @@ const RoomList: React.FC<Props> = ({ filters }) => {
 
         {selectedRoom && (
           <RoomDetail room={selectedRoom} onClose={closeRoomDetail} />
+        )}
+
+        {reservationRoom && (
+          <div
+            className="modal fade show d-block"
+            tabIndex={-1}
+            style={{ background: "rgba(0,0,0,0.5)" }}
+          >
+            <div className="modal-dialog modal-lg modal-dialog-centered">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title d-flex flex-column">
+                    <span>Make Reservation</span>
+                    <span>{reservationRoom.type}</span>
+                  </h5>
+                  <button
+                    type="button"
+                    className="btn-close"
+                    onClick={closeReservation}
+                  ></button>
+                </div>
+                <div className="modal-body">
+                  <MakeReservation room={reservationRoom} />
+                </div>
+              </div>
+            </div>
+          </div>
         )}
 
         {showSortModal && (

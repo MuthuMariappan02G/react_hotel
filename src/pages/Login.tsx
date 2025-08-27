@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Lottie from 'lottie-react';
 import LoginLottie from '../mock/Lottie/Green Login.json';
 import Loading from '../mock/Lottie/Loading 40 _ Paperplane.json';
+import Success from '../mock/Lottie/Success animation.json';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -12,6 +13,7 @@ const Login: React.FC = () => {
   const [message, setMessage] = useState('');
   const [messageType, setMessageType] = useState<'success' | 'danger' | ''>('');
   const [loading, setLoading] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
   const navigate = useNavigate();
 
   const handleCheckEmail = () => {
@@ -28,10 +30,14 @@ const Login: React.FC = () => {
   const handleCheckPassword = () => {
     if (password === 'Muthu@02') {
       localStorage.setItem('isAuthenticated', 'true');
-      setLoading(true);
+      setShowSuccess(true);
       setTimeout(() => {
-        navigate('/');
-      }, 3000);
+        setShowSuccess(false);
+        setLoading(true);
+        setTimeout(() => {
+          navigate('/');
+        }, 3000);
+      }, 2000);
     } else {
       setMessage('Incorrect Password');
       setMessageType('danger');
@@ -44,6 +50,14 @@ const Login: React.FC = () => {
       navigate(path, state ? { state } : undefined);
     }, 3000);
   };
+
+  if (showSuccess) {
+    return (
+      <div className="d-flex justify-content-center align-items-center vh-100">
+        <Lottie animationData={Success} loop={false} style={{ width: 300, height: 300 }} />
+      </div>
+    );
+  }
 
   if (loading) {
     return (
