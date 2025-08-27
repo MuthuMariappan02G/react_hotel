@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SearchFilters } from './AvailableRooms';
 
 interface Props {
@@ -25,7 +25,6 @@ const SearchRoom: React.FC<Props> = ({ onSearch }) => {
   };
 
   const handleClear = () => {
-    setCheckIn('');
     setCheckOut('');
     setAdults('');
     setChildren('');
@@ -33,6 +32,12 @@ const SearchRoom: React.FC<Props> = ({ onSearch }) => {
     setRoomType('');
     onSearch(null);
   };
+
+    useEffect(() => {
+      const today = new Date();
+      const formattedDate = today.toISOString().split("T")[0];
+      setCheckIn(formattedDate);
+    }, []);
 
   return (
     <div className="card p-3">
