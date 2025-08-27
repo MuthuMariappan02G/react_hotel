@@ -40,7 +40,6 @@ const MakeReservation: React.FC<Props> = ({ room }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Reservation Data:", forms);
     alert(`Reservation for ${room.type} submitted!`);
   };
 
