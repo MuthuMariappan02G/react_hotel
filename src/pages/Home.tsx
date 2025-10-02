@@ -5,9 +5,6 @@ import Topbar from "../component/Topbar";
 import SearchRoom from "../component/SearchRoom";
 import RoomList from "../component/RoomList";
 import LastReservation from "../component/LastReservation";
-import CommingSoon from "../mock/Lottie/Under Construction Animation.json";
-import Lottie from "lottie-react";
-import CicleLoading from "../mock/Lottie/Sandy Loading.json";
 
 export interface SearchFilters {
   checkIn: string;
@@ -97,12 +94,13 @@ const Home: React.FC = () => {
         <div className="container-fluid mt-3">
           <div className="row">
             {loading ? (
-              <div className="d-flex justify-content-center align-items-center vh-100">
-                <Lottie
-                  animationData={CicleLoading}
-                  loop={true}
-                  style={{ width: 200, height: 200 }}
-                />
+              <div 
+                className="d-flex justify-content-center align-items-center position-fixed top-50 start-50 translate-middle"
+                style={{ width: '100%', height: '100%' }}
+              >
+                <div className="spinner-border text-primary" role="status" style={{ width: 80, height: 80 }}>
+                  <span className="visually-hidden">Loading...</span>
+                </div>
               </div>
             ) : selectedIcon === "Calendar" ? (
               <>
@@ -115,13 +113,10 @@ const Home: React.FC = () => {
                 </div>
               </>
             ) : (
-              <div className="d-flex justify-content-center align-items-center">
-                <Lottie
-                  animationData={CommingSoon}
-                  loop={true}
-                  style={{ width: 250, height: 250 }}
-                />
+              <div className="d-flex justify-content-center align-items-center" style={{ height: 250 }}>
+                <h3 className="text-center text-muted"> </h3>
               </div>
+
             )}
           </div>
           <div className="mt-4">

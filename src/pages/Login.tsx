@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Lottie from 'lottie-react';
 import LoginLottie from '../mock/Lottie/Green Login.json';
-import Loading from '../mock/Lottie/Loading 40 _ Paperplane.json';
-import Success from '../mock/Lottie/Success animation.json';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -13,7 +10,6 @@ const Login: React.FC = () => {
   const [message, setMessage] = useState('');
   const [messageType, setMessageType] = useState<'success' | 'danger' | ''>('');
   const [loading, setLoading] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
   const navigate = useNavigate();
 
   const handleCheckEmail = () => {
@@ -30,9 +26,7 @@ const Login: React.FC = () => {
   const handleCheckPassword = () => {
     if (password === 'Muthu@02') {
       localStorage.setItem('isAuthenticated', 'true');
-      setShowSuccess(true);
       setTimeout(() => {
-        setShowSuccess(false);
         setLoading(true);
         setTimeout(() => {
           navigate('/');
@@ -48,21 +42,18 @@ const Login: React.FC = () => {
     setLoading(true);
     setTimeout(() => {
       navigate(path, state ? { state } : undefined);
-    }, 3000);
+    }, 2000);
   };
-
-  if (showSuccess) {
-    return (
-      <div className="d-flex justify-content-center align-items-center vh-100">
-        <Lottie animationData={Success} loop={false} style={{ width: 300, height: 300 }} />
-      </div>
-    );
-  }
-
+  
   if (loading) {
     return (
-      <div className="d-flex justify-content-center align-items-center vh-100">
-        <Lottie animationData={Loading} loop={true} style={{ width: 400, height: 400 }} />
+      <div 
+        className="d-flex justify-content-center align-items-center position-fixed top-50 start-50 translate-middle"
+        style={{ width: '100%', height: '100%' }}
+      >
+        <div className="spinner-border text-primary" role="status" style={{ width: 80, height: 80 }}>
+          <span className="visually-hidden">Loading...</span>
+        </div>
       </div>
     );
   }

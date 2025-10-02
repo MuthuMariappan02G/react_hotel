@@ -35,29 +35,30 @@ const SearchRoom: React.FC<Props> = ({ onSearch }) => {
 
     useEffect(() => {
       const today = new Date();
-      const formattedDate = today.toISOString().split("T")[0];
+      const formattedDate = today.toISOString().slice(0, 16);
       setCheckIn(formattedDate);
     }, []);
 
   return (
-    <div className="card p-3">
+    <div className="card p-3" style={{ backgroundColor: "#f5f5f5" }}>
       <h5>Search Room</h5>
       <p className="text-muted">Search available room for reservation</p>
 
       <div className="row">
-        <div className="col-6 mb-3">
+         <div className="col-6 mb-3">
           <label>Check In</label>
           <input
-            type="date"
+            type="datetime-local"
             className="form-control"
             value={checkIn}
             onChange={(e) => setCheckIn(e.target.value)}
           />
         </div>
+
         <div className="col-6 mb-3">
           <label>Check Out</label>
           <input
-            type="date"
+            type="datetime-local"
             className="form-control"
             value={checkOut}
             onChange={(e) => setCheckOut(e.target.value)}
@@ -96,9 +97,7 @@ const SearchRoom: React.FC<Props> = ({ onSearch }) => {
           value={rooms}
           onChange={(e) => setRooms(e.target.value)}
         />
-      </div>
-
-      <div className="mb-3">
+        <div className="mb-3">
         <label>Room Type</label>
         <input
           type="text"
@@ -107,21 +106,21 @@ const SearchRoom: React.FC<Props> = ({ onSearch }) => {
           onChange={(e) => setRoomType(e.target.value)}
         />
       </div>
-
+      </div>
       <div className="d-flex gap-2">
         <button
-          className="btn btn-primary w-100"
-          style={{ borderRadius: '50px' }}
-          onClick={handleSearch}
-        >
-          Search
-        </button>
-        <button
-          className="btn btn-outline-secondary w-100"
+          className="btn btn-outline-primary w-100"
           style={{ borderRadius: '50px' }}
           onClick={handleClear}
         >
           Clear
+        </button>
+        <button
+          className="btn btn-outline-primary w-100"
+          style={{ borderRadius: '50px' }}
+          onClick={handleSearch}
+        >
+          Search
         </button>
       </div>
     </div>
