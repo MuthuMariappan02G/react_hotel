@@ -9,16 +9,16 @@ const LastReservation: React.FC = () => {
   const paginatedData = reservations.slice((page - 1) * perPage, page * perPage);
 
   return (
-    <div className="card p-3 mt-3">
+    <div className="card p-3 mt-3" style={{ backgroundColor: "#f5f5f5" }}>
       <div className="d-flex justify-content-between align-items-center mb-2">
         <h6 className="mb-0 fw-bold">Last Reservation</h6>
         {/* <i className="bi bi-three-dots-vertical text-muted"></i> */}
       </div>
-      <hr className="mb-3" />
       {paginatedData.map((res) => (
         <div
           key={res.id}
           className="card d-flex flex-row align-items-center p-3 gap-2 shadow-sm mb-2"
+          // style={{ backgroundColor: "#f5f5f5" }}
         >
           <img
             src={res.image}

@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Lottie from 'lottie-react';
 import SignupLottie from '../mock/Lottie/Developer.json';
-import Loading from '../mock/Lottie/Loading 40 _ Paperplane.json';
 
 const SignUp: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -45,8 +43,13 @@ const SignUp: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="d-flex justify-content-center align-items-center vh-100">
-        <Lottie animationData={Loading} loop={true} style={{ width: 400, height: 400 }} />
+      <div 
+        className="d-flex justify-content-center align-items-center position-fixed top-50 start-50 translate-middle"
+        style={{ width: '100%', height: '100%' }}
+      >
+        <div className="spinner-border text-primary" role="status" style={{ width: 80, height: 80 }}>
+          <span className="visually-hidden">Loading...</span>
+        </div>
       </div>
     );
   }
