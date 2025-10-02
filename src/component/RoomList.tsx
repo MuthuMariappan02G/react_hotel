@@ -3,9 +3,6 @@ import roomsData from "../mock/roomsData.json";
 import RoomDetail from "./RoomDetail";
 import MakeReservation from "./MakeReservation";
 import { SearchFilters } from "./AvailableRooms";
-import Lottie from "lottie-react";
-import NoData from "../mock/Lottie/Error 404.json";
-import Spinner from "../mock/Lottie/Loading Travel Animation.json";
 
 interface Feature {
   icon: string;
@@ -96,7 +93,7 @@ const RoomList: React.FC<Props> = ({ filters }) => {
     return () => clearTimeout(timer);
   }, [filters, selectedCategory, sortType, minPrice, maxPrice, minRating]);
 
-  const itemsPerPage = 4;
+  const itemsPerPage = 3;
   const startIndex = currentPage * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const visibleRooms = filteredRooms.slice(startIndex, endIndex);
@@ -121,8 +118,10 @@ const RoomList: React.FC<Props> = ({ filters }) => {
 
   return (
     <>
-      <div className="card p-3">
-        <div className="card p-3">
+      <div className="card p-3" style={{ backgroundColor: "#f5f5f5" }}>
+        <div className="card p-3" 
+          // style={{ backgroundColor: "#f5f5f5" }}
+        >
           <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3 gap-2">
             <div>
               <h4 className="mb-0">Available Rooms</h4>
@@ -154,7 +153,7 @@ const RoomList: React.FC<Props> = ({ filters }) => {
             </div>
           </div>
 
-          <div className="mb-4 d-flex flex-wrap gap-2">
+          <div className="mb-4 d-flex flex-wrap gap-2" >
             {categories.map((label, idx) => (
               <button
                 key={idx}
@@ -175,32 +174,22 @@ const RoomList: React.FC<Props> = ({ filters }) => {
         </div>
 
         {loading ? (
-          <div className="d-flex justify-content-center align-items-center p-5">
-            <Lottie
-              animationData={Spinner}
-              loop={true}
-              style={{ width: 150, height: 150 }}
-            />
+          <div className="d-flex justify-content-center align-items-center vh-100">
+            <div className="spinner-border text-primary" role="status" style={{ width: 80, height: 80 }}>
+              <span className="visually-hidden">Loading...</span>
+            </div>
           </div>
         ) : visibleRooms.length === 0 ? (
           <div className="col-12 d-flex flex-column justify-content-center align-items-center p-3">
-            <Lottie
-              animationData={NoData}
-              loop={true}
-              style={{
-                width: "100%",
-                maxWidth: 370,
-                height: "auto",
-                maxHeight: 500,
-              }}
-            />
             <div className="text-center text-muted py-4 fs-5">
               No Rooms are Available Today
             </div>
           </div>
         ) : (
           visibleRooms.map((room) => (
-            <div key={room.id} className="card mb-3 p-3 mt-3">
+            <div key={room.id} className="card mb-3 p-3 mt-3" 
+              // style={{ backgroundColor: "#f5f5f5" }}
+            >
               <div className="row g-3 align-items-start align-items-md-center">
                 <div className="col-12 col-md-8 d-flex">
                   <div className="position-relative me-3 flex-shrink-0">
